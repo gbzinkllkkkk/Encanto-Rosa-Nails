@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encanto Rosa Nails</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #e91e63, #f06292);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #fce4ec;
+            font-size: 1.2em;
+        }
+
+        .photo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .photo-section img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .photo-section h2 {
+            margin-top: 15px;
+            color: #e91e63;
+            font-size: 1.5em;
+        }
+
+        .services-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .services-section h2 {
+            text-align: center;
+            color: #e91e63;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            background: #fce4ec;
+            border-radius: 12px;
+            transition: transform 0.2s;
+        }
+
+        .service-item:hover {
+            transform: translateX(5px);
+        }
+
+        .service-name {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .service-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-price input {
+            width: 100px;
+            padding: 8px 12px;
+            border: 2px solid #f48fb1;
+            border-radius: 8px;
+            font-size: 1em;
+            text-align: center;
+            color: #e91e63;
+            font-weight: bold;
+            outline: none;
+        }
+
+        .service-price input:focus {
+            border-color: #e91e63;
+            box-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+        }
+
+        .service-price span {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e91e63;
+        }
+
+        .edit-btn {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .edit-btn:hover {
+            background: #c2185b;
+        }
+
+        .whatsapp-section {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-section h2 {
+            color: #e91e63;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .whatsapp-section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-btn svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .message-preview {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            border-left: 4px solid #25d366;
+        }
+
+        .message-preview h3 {
+            color: #25d366;
+            margin-bottom: 10px;
+        }
+
+        .message-preview p {
+            color: #555;
+            font-size: 0.95em;
+            white-space: pre-line;
+        }
+
+        .add-service {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .add-service input {
+            padding: 12px 16px;
+            border: 2px solid #f48fb1;
+            border-radius: 10px;
+            font-size: 1em;
+            outline: none;
+        }
+
+        .add-service input:focus {
+            border-color: #e91e63;
+        }
+
+        .add-service button {
+            background: #e91e63;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .add-service button:hover {
+            background: #c2185b;
+        }
+
+        .delete-btn {
+            background: #ff5252;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-left: 10px;
+        }
+
+        .delete-btn:hover {
+            background: #d32f2f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #e91e63;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .service-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .add-service {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .add-service input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💅 Encanto Rosa Nails 💅</h1>
+            <p>Beleza e cuidado para suas unhas</p>
+        </header>
+
+        <div class="photo-section">
+            <img src="foto.jpg" alt="Encanto Rosa Nails" id="profilePhoto">
+            <h2>Bem-vinda ao nosso espaço de beleza!</h2>
+        </div>
+
+        <div class="services-section">
+            <h2> Nossos Serviços 💖</h2>
+            <div id="servicesList"></div>
+            
+            <div class="add-service">
+                <input type="text" id="newServiceName" placeholder="Nome do serviço">
+                <input type="number" id="newServicePrice" placeholder="Preço (R$)" step="0.01">
+                <button onclick="addService()">➕ Adicionar Serviço</button>
+            </div>
+        </div>
+
+        <div class="whatsapp-section">
+            <h2> Agende seu Horário</h2>
+            <p>Clique no botão abaixo para agendar seu atendimento via WhatsApp. 
+               Nossa equipe está pronta para te atender com todo carinho!</p>
+            
+            <a href="#" class="whatsapp-btn" id="whatsappLink" target="_blank">
+                <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Agendar via WhatsApp
+            </a>
+
+            <div class="message-preview">
+                <h3>📋 Mensagem que será enviada:</h3>
+                <p id="messagePreview"></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>💅 Encanto Rosa Nails - Todos os direitos reservados © 2026</p>
+        </footer>
+    </div>
+
+    <script>
+        // Dados iniciais dos serviços
+        const defaultServices = [
+            { name: "Manicure Simples", price: 35.00 },
+            { name: "Pedicure Simples", price: 40.00 },
+            { name: "Manicure + Pedicure", price: 70.00 },
+            { name: "Unha em Gel", price: 80.00 },
+            { name: "Unha em Fibra de Vidro", price: 90.00 },
+            { name: "Unha em Porcelana", price: 100.00 },
+            { name: "Alongamento de Unhas", price: 120.00 },
+            { name: "Nail Art / Decoração", price: 50.00 },
+            { name: "Esmaltação em Gel", price: 60.00 },
+            { name: "Spa dos Pés", price: 55.00 }
+        ];
+
+        // Carregar serviços do localStorage ou usar padrão
+        function loadServices() {
+            const saved = localStorage.getItem('encantoRosaServices');
+            return saved ? JSON.parse(saved) : defaultServices;
+        }
+
+        // Salvar serviços no localStorage
+        function saveServices(services) {
+            localStorage.setItem('encantoRosaServices', JSON.stringify(services));
+        }
+
+        // Renderizar lista de serviços
+        function renderServices() {
+            const services = loadServices();
+            const list = document.getElementById('servicesList');
+            list.innerHTML = '';
+
+            services.forEach((service, index) => {
+                const item = document.createElement('div');
+                item.className = 'service-item';
+                item.innerHTML = `
+                    <span class="service-name">${service.name}</span>
+                    <div class="service-price">
+                        <span>R$</span>
+                        <input type="number" value="${service.price.toFixed(2)}" 
+                               step="0.01" min="0" 
+                               onchange="updatePrice(${index}, this.value)"
+                               onfocus="this.select()">
+                        <button class="delete-btn" onclick="deleteService(${index})">🗑️</button>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+
+            updateWhatsAppLink();
+        }
+
+        // Atualizar preço
+        function updatePrice(index, value) {
+            const services = loadServices();
+            services[index].price = parseFloat(value) || 0;
+            saveServices(services);
+            updateWhatsAppLink();
+        }
+
+        // Adicionar novo serviço
+        function addService() {
+            const nameInput = document.getElementById('newServiceName');
+            const priceInput = document.getElementById('newServicePrice');
+            
+            const name = nameInput.value.trim();
+            const price = parseFloat(priceInput.value);
+
+            if (name && !isNaN(price) && price >= 0) {
+                const services = loadServices();
+                services.push({ name, price });
+                saveServices(services);
+                renderServices();
+                nameInput.value = '';
+                priceInput.value = '';
+            } else {
+                alert('Por favor, preencha o nome e o preço do serviço.');
+            }
+        }
+
+        // Deletar serviço
+        function deleteService(index) {
+            if (confirm('Tem certeza que deseja remover este serviço?')) {
+                const services = loadServices();
+                services.splice(index, 1);
+                saveServices(services);
+                renderServices();
+            }
+        }
+
+        // Atualizar link do WhatsApp
+        function updateWhatsAppLink() {
+            const services = loadServices();
+            const phone = '5521984872296';
+            
+            let message = `Olá! 💅✨\n\n`;
+            message += `Gostaria de agendar um horário no Encanto Rosa Nails!\n\n`;
+            message += `Serviços disponíveis:\n`;
+            services.forEach(s => {
+                message += `• ${s.name} - R$ ${s.price.toFixed(2)}\n`;
+            });
+            message += `\nPor favor, me informe a disponibilidade de horários. Obrigada! 🌸`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const link = `https://wa.me/${phone}?text=${encodedMessage}`;
+            
+            document.getElementById('whatsappLink').href = link;
+            document.getElementById('messagePreview').textContent = message;
+        }
+
+        // Inicializar
+        renderServices();
+
+        // Permitir adicionar serviço com Enter
+        document.getElementById('newServiceName').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') document.getElementById('newServicePrice').focus();
+        });
+        document.getElementById('newServicePrice').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') addService();
+        });
+    </script>
+</body>
